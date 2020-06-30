@@ -50,35 +50,45 @@ if (!defined('DOKU_INC')) die();
 							<aside id="search-2" class="widget widget_search">
 								<?php if(preg_match("/cupid(:.*)?/", $INFO['namespace'])) tpl_searchform(); ?>
 							</aside>
+              <?php if(!empty(tpl_getConf('topSidebar'))) {
+echo <<<EOF
 							<aside id="recent-posts-2" class="widget widget_recent_entries">
 								<h3 class='widget-title'>Recent / Updated Posts</h3>
 								
 									<!-- ********** ASIDE ********** -->
 									<div class="pad2 aside include group">
 										<div class="content"><div class="group">
-											<?php tpl_flush() ?>
-											<?php tpl_includeFile('sidebarheader.html') ?>
-											
-											<?php tpl_include_page(tpl_getConf('topSidebar'), true, true) ?>
-											
+EOF;
+											tpl_flush();
+											tpl_includeFile('sidebarheader.html');
+											tpl_include_page(tpl_getConf('topSidebar'), true, true);
+							echo <<<EOF
 										</div></div>
 									</div>
 									<!-- /aside -->
 									
 							</aside>
-							<aside id="categories-1" class="widget widget_categories">
-								<h3 class='widget-title'>Categories</h3>
+EOF;
+							}
+							if(!empty(tpl_getConf('bottomSidebar'))) {
+								echo <<<EOF
+								<aside id="categories-1" class="widget widget_categories">
+									<h3 class='widget-title'>Categories</h3>
 								
 									<!-- ********** ASIDE ********** -->
 									<div class="pad2 aside include group">
 										<div class="content"><div class="group">
-											<?php tpl_flush() ?>
-											<?php tpl_include_page(tpl_getConf('bottomSidebar'), true, true) ?>
+EOF;
+											tpl_flush();
+											tpl_include_page(tpl_getConf('bottomSidebar'), true, true);
+								echo <<<EOF
 										</div></div>
 									</div>
 									<!-- /aside -->
 									
-							</aside>
+								</aside>
+EOF;
+							} ?>
 							<aside id="categories-2" class="widget widget_categories">
 								<h3 class='widget-title'>Administation</h3>
 								
