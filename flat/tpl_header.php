@@ -48,7 +48,7 @@ if (!defined('DOKU_INC')) die();
 					<div class="sidebar-offcanvas">
 						<div id="main-sidebar" class="widget-area" role="complementary">
 							<aside id="search-2" class="widget widget_search">
-								<?php tpl_searchform(); ?>
+								<?php if(preg_match("/cupid(:.*)?/", $INFO['namespace'])) tpl_searchform(); ?>
 							</aside>
 							<aside id="recent-posts-2" class="widget widget_recent_entries">
 								<h3 class='widget-title'>Recent / Updated Posts</h3>
@@ -96,7 +96,7 @@ if (!defined('DOKU_INC')) die();
 												tpl_toolsevent('usertools', array(
 													tpl_action('admin', true, 'li', true),
 													tpl_action('profile', true, 'li', true),
-													tpl_action('register', true, 'li', true),
+													//tpl_action('register', true, 'li', true),
 													tpl_action('login', true, 'li', true)
 												));
 											?>
