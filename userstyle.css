@@ -1,0 +1,37 @@
+/* Place customisations to screen mode style sheet here */
+.btn_secedit {
+	text-align: right;
+}
+.btn_secedit button {
+  background-color: rgb(85, 85, 85);
+  border-radius: 15%;
+  border: none;
+  color: white;
+  padding: 2px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.toolbutton {
+  border-width: 0px;
+  padding: 3px 6px;
+}
+
+.editButtons button {
+  border: 0px;
+}
+
+#dw__toc {
+  background-color: rgb(240, 240, 240);
+  border-color: rgb(204, 204, 204);
+  border-left-width: 0px;
+  border-bottom-width: 0px;
+  padding-left: 6px;
+ }
+
+ #media__manager {
+  margin-left: 2em;
+ }
